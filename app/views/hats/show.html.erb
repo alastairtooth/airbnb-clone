@@ -1,0 +1,13 @@
+<h2><%= @hat.title %></h2>
+<p><%= @hat.description %></p>
+<p><%= @hat.price %></p>
+<p><%= @hat.size %></p>
+<p><%= @hat.available %></p>
+<p><%= cl_image_tag @hat.photo.key %></p>
+
+<%= link_to 'Edit', edit_hat_path(@hat), class: "btn btn-success"  %>
+
+<%= link_to "Delete #{@hat.title}",
+            hat_path(@hat),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
