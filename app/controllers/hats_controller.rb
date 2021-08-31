@@ -13,6 +13,7 @@ class HatsController < ApplicationController
 
   def create
     @hat = Hat.new(hat_params)
+    @hat.rat = current_rat
     if @hat.save
       redirect_to hat_path(@hat)
     else
