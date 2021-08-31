@@ -5,8 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
-10.times do
+puts "Destroying all files"
+Hat.destroy_all
+Rat.destroy_all
+
+puts "Creating files"
+5.times do
   rat = Rat.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -18,17 +24,20 @@ end
 rats = Rat.all
 
 rats.each do |rat|
-  rand(4..10).times do
+  2.times do
     hat = Hat.new(
       title: Faker::Name.first_name,
       description: Faker::Name.last_name,
-      price: "rat#{Faker::Internet.free_email}",
-      size: rand("S", "M", "L"),
+      price: (10..30).to_a.sample,
+      size: Hat::SIZES.sample,
       available: true,
-      rats_id: rat.id,
-      created_at: Faker::Time.between(from: DateTime.now - 5, to: DateTime.now),
-      updated_at: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
+      rats_id: rat.id
     )
+    file = URI.open('https://source.unsplash.com/1600x900/?hats')
+    hat.photo.attach(io: file, filename: "desktop.png", content_type: "image/png")
     hat.save!
   end
 end
+
+puts "Finished"
+
