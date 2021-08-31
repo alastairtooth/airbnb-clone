@@ -1,5 +1,14 @@
-<ul>
-  <% @hats.each do |hat| %>
-    <li><%= hat.title %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>All my hats for <strong>rats</strong> !</h1>
+  <p><%= link_to 'Add a new hat', new_hat_path(@hat) %></p>
+</div>
+
+<div class="container-hats">
+  <div class="hats">
+    <% @hats.each do |hat| %>
+      <div class="card-hat" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')">
+      <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
+      </div>
+    <% end %>
+  </div>
+</div>
