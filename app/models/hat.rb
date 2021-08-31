@@ -11,5 +11,5 @@ class Hat < ApplicationRecord
   validates :size, presence: true, inclusion: { in: SIZES }
 
   validates :available, presence: true
-  # validates :photo, presence: true
+  validates :photo, presence: true
 end
