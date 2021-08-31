@@ -19,10 +19,14 @@ puts "Creating files"
     email: "rat#{Faker::Internet.free_email}",
     password: "password"
   )
+  file = URI.open('https://source.unsplash.com/200x200/?rats')
+  rat.photo.attach(io: file, filename: "desktop.png", content_type: "image/png")
   rat.save!
 end
 
 rats = Rat.all
+
+
 
 rats.each do |rat|
   2.times do
