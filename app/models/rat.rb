@@ -4,6 +4,7 @@ class Rat < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bookings
+  has_many :hats
   has_one_attached :photo
 
   validates :first_name, presence: true
