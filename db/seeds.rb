@@ -40,3 +40,4 @@ rats.each do |rat|
 end
 
 puts "Finished"
+
