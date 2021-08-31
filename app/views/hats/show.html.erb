@@ -14,10 +14,11 @@
 
 
 <div class="edit-delete">
-  <%= link_to 'Edit', edit_hat_path(@hat), class: "btn btn-success"  %>
+  <h3>FOR OWNERS</h3>
+  <%= link_to 'Edit', edit_hat_path(@hat), class: "btn btn-primary"  %>
 
   <%= link_to "Delete #{@hat.title}",
               hat_path(@hat),
               method: :delete,
-              data: { confirm: "Are you sure?" } %>
+              data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
 </div>
