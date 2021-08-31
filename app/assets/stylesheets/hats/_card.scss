@@ -1,0 +1,28 @@
+.new-hats {
+  display: grid;
+  flex-grow: 1;
+  text-align: center;
+  width: 50%;
+  background-color: hsl(0, 0%, 98%);
+  padding: 5%;
+  box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin: 5%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+@media (min-width: 100px) and (max-width: 790px) {
+  .new-hats {
+    grid-template-columns: 1fr;
+    width: 90%;
+    h1 {
+          font-size: 200%;
+    }
+  }
+}
+
+.new-hat {
+  justify-self: center
+}

@@ -1,0 +1,5 @@
+<ul>
+  <% @rats.each do |rat| %>
+    <li><%= rat.first_name %> <%= rat.last_name %> - email: <%= rat.email %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,11 @@
+<h2><%= @rat.first_name %></h2>
+<p><%= @rat.last_name %></p>
+<p><%= @rat.email %></p>
+<p><%= cl_image_tag @rat.photo.key %></p>
+
+<%= link_to 'Edit', edit_rat_path(@rat), class: "btn btn-success"  %>
+
+<%= link_to "Delete #{@rat.first_name}",
+            rat_path(@rat),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
