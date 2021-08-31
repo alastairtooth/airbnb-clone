@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 2021_08_31_070624) do
 
   create_table "bookings", force: :cascade do |t|
     t.boolean "accepted"
-    t.bigint "hats_id", null: false
-    t.bigint "rats_id", null: false
+    t.bigint "hat_id", null: false
+    t.bigint "rat_id", null: false
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["hats_id"], name: "index_bookings_on_hats_id"
-    t.index ["rats_id"], name: "index_bookings_on_rats_id"
+    t.index ["hat_id"], name: "index_bookings_on_hat_id"
+    t.index ["rat_id"], name: "index_bookings_on_rat_id"
   end
 
   create_table "hats", force: :cascade do |t|
@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 2021_08_31_070624) do
     t.integer "price"
     t.string "size"
     t.boolean "available"
-    t.bigint "rats_id", null: false
+    t.bigint "rat_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["rats_id"], name: "index_hats_on_rats_id"
+    t.index ["rat_id"], name: "index_hats_on_rat_id"
   end
 
   create_table "rats", force: :cascade do |t|
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_070624) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "hats", column: "hats_id"
-  add_foreign_key "bookings", "rats", column: "rats_id"
-  add_foreign_key "hats", "rats", column: "rats_id"
+  add_foreign_key "bookings", "hats"
+  add_foreign_key "bookings", "rats"
+  add_foreign_key "hats", "rats"
 end

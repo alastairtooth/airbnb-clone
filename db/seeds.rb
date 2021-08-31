@@ -36,7 +36,7 @@ rats.each do |rat|
       price: (10..30).to_a.sample,
       size: Hat::SIZES.sample,
       available: true,
-      rats_id: rat.id
+      rat_id: rat.id
     )
     file = URI.open('https://source.unsplash.com/1600x900/?hats')
     hat.photo.attach(io: file, filename: "desktop.png", content_type: "image/png")

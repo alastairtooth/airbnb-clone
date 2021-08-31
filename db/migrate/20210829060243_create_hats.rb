@@ -6,7 +6,7 @@ class CreateHats < ActiveRecord::Migration[6.0]
       t.integer :price
       t.string :size
       t.boolean :available
-      t.references :rats, null: false, foreign_key: true
+      t.references :rat, null: false, foreign_key: true
 
       t.timestamps
     end

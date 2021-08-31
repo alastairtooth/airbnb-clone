@@ -1,4 +1,5 @@
 class Hat < ApplicationRecord
+  belongs_to :rat
   has_many :bookings
   has_one_attached :photo
 

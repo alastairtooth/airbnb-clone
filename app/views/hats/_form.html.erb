@@ -2,7 +2,7 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :price %>
-  <%= f.text_field :size %>
+  <%= f.input :size, as: :radio_buttons, collection: Hat::SIZES %>
   <%= f.input :available %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
