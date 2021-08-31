@@ -16,7 +16,8 @@ puts "Creating files"
   rat = Rat.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: "rat#{Faker::Internet.free_email}"
+    email: "rat#{Faker::Internet.free_email}",
+    password: "password"
   )
   rat.save!
 end
@@ -40,4 +41,3 @@ rats.each do |rat|
 end
 
 puts "Finished"
-
