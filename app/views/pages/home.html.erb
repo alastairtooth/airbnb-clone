@@ -1,2 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Rent hats for <strong>rats</strong> !</h1>
+</div>
+
+<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
