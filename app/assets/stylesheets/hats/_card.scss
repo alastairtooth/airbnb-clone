@@ -59,9 +59,13 @@
 .card-hat {
   // height: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 100%;
+  height: 93%;
   padding: 0%;
   text-align: left;
+    h2 {
+      font-size: 150%;
+      margin-bottom: 0%;
+    }
 }
 
 .card-hat-img {

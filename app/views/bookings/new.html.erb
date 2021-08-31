@@ -1,7 +1,7 @@
 <div class="new-hats">
   <div class="new-hat">
     <h1>New <strong>booking</strong> !</h1>
-    <%= simple_form_for( @hat, @booking ) do |f| %>
+    <%= simple_form_for( @booking ) do |f| %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <%= f.submit "Submit", class: "btn btn-primary" %>
