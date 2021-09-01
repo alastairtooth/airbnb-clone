@@ -1,7 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
-  position: fixed;
   width: 100vw;
   top: 0px;
   left: 0px;
@@ -23,4 +22,8 @@
 
 .navbar-lewagon .nav-link {
   color: white !important;
+}
+
+#home-navbar {
+  position: fixed;
 }

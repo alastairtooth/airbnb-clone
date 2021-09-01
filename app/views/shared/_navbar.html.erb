@@ -1,4 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% if controller_name == "pages" && action_name == "home" %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="home-navbar">
+<% else %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-lewagon-white">
+<% end %>
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "toprat2.png" %>
     <% end %>
