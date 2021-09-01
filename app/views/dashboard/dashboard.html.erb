@@ -54,7 +54,7 @@
     <div class="container-hats">
       <div class="hats">
         <% @hats.each do |hat| %>
-          <div class="card-hat">
+          <div class="card-hat-item">
             <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
             <div class="card-hat-text">
               <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
