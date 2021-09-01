@@ -69,8 +69,8 @@
   background-size: cover;
   justify-content: center;
   align-items: flex-end;
-  border-radius: 6px;
-  box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137);
+  border-radius: 5%;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
     h2, a {
       font-size: 150%;
       margin-bottom: 0%;
@@ -91,4 +91,67 @@
       font-weight: lighter;
       color: black;
     }
+}
+
+.container-rats-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container-rat-profile {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height:  86%;
+  padding: 0%;
+  text-align: left;
+  border-radius: 5%;
+  margin: 5%;
+    h2 {
+      font-size: 150%;
+      margin-bottom: 0%;
+    }
+}
+
+.card-rat-img-profile {
+  aspect-ratio: 16 / 12;
+  // border-radius: 8px;
+  background-size: cover;
+  border-radius: 5% 5% 0% 0%;
+}
+
+.card-rat-text-profile {
+  padding: 3%;
+    a {
+      font-weight: lighter;
+      color: black;
+    }
+}
+
+.container-hats-rat-profile {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: left;
+  margin: 0 auto;
+  margin: 5%;
+}
+
+.container-hats-rat-profile-item {
+  display: grid;
+  flex-grow: 1;
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.hats-rat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+}
+
+.card-hat-rat-item {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 93%;
+  padding: 0%;
+  text-align: left;
+  border-radius: 5%;
 }

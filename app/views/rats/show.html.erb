@@ -1,14 +1,34 @@
-<div class="container-hat">
-  <div class="container-hat-card">
-    <% if @rat.photo.attached? %>
-        <div class="card-hat-img" style="background-image: url('<%= cl_image_path @rat.photo.key, height: 300, crop: :fill %>')"></div>
-    <% else %>
-        <div class="card-hat-img" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
-    <% end %>
-    <div class="card-hat-text">
-      <h2><%= @rat.first_name %></h2>
-      <p><%= @rat.last_name %></p>
-      <p><%= @rat.email %></p>
+<div class="container-rats-profile">
+  <div class="container-rat-profile">
+    <div class="container-rat-card-profile">
+      <% if @rat.photo.attached? %>
+          <div class="card-rat-img-profile" style="background-image: url('<%= cl_image_path @rat.photo.key, height: 300, crop: :fill %>')"></div>
+      <% else %>
+          <div class="card-rat-img-profile" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
+      <% end %>
+      <div class="card-rat-text-profile">
+        <h2><%= @rat.first_name %> <%= @rat.last_name %></h2>
+        <p><%= @rat.email %></p>
+      </div>
     </div>
   </div>
+  <div class="container-hats-rat-profile">
+      <h2>All my hats for <strong>rats</strong> !</h2>
+      <div class="container-hats-rat-profile-item">
+        <div class="hats-rat">
+          <% @hats.each do |hat| %>
+            <div class="card-hat-rat-item">
+              <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+              <div class="card-hat-text">
+                <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
+                <div class="price-size">
+                  <p>$<%= hat.price %></p>
+                  <p>Size: <%= hat.size %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>
