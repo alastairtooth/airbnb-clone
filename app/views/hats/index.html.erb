@@ -1,21 +1,21 @@
-<div class="container">
+<div class="container-bookings-pending">
   <h1>Rent hats for <strong>rats</strong> !</h1>
   <p><%= link_to 'Add a new hat', new_hat_path(@hat) %></p>
-</div>
 
-<div class="container-hats">
-  <div class="hats">
-    <% @hats.each do |hat| %>
-      <div class="card-hat">
-        <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
-        <div class="card-hat-text">
-          <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
-          <div class="price-size">
-            <p>$<%= hat.price %></p>
-            <p>Size: <%= hat.size %></p>
+  <div class="container-hats">
+    <div class="hats">
+      <% @hats.each do |hat| %>
+        <div class="card-hat">
+          <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+          <div class="card-hat-text">
+            <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
+            <div class="price-size">
+              <p>$<%= hat.price %></p>
+              <p>Size: <%= hat.size %></p>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -11,14 +11,14 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="request" role="tabpanel" aria-labelledby="request-tab">
-    <div class="container-hats">
+    <div class="container-bookings-pending">
       <h2>Pending bookings</h2>
-      <div class="hats">
+      <div class="bookings-pending">
         <% @pending_bookings.each do |booking| %>
           <% if booking.hat.rat == current_rat %>
-            <div class="card-hat">
-              <div class="card-hat-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
-              <div class="card-hat-text">
+            <div class="card-bookings-pending">
+              <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
+              <div class="card-bookings-pending-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
                 <div class="price-size">
                   <p>$<%= booking.hat.price %></p>
@@ -32,24 +32,20 @@
               </div>
             </div>
           <% end %>
-
         <% end %>
-
-
-
       </div>
-      <% if @pending_bookings.empty? %>
+      <% if current_rat.bookings.empty? %>
         <p>There are no pending bookings...</p>
       <% end %>
     </div>
-    <div class="container-hats">
+    <div class="container-bookings-pending">
       <h2>Rent history</h2>
-      <div class="hats">
+      <div class="bookings-pending">
         <% @historical_bookings.each do |booking| %>
           <% if booking.hat.rat == current_rat %>
-            <div class="card-hat">
-              <div class="card-hat-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
-              <div class="card-hat-text">
+            <div class="card-bookings-pending">
+              <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
+              <div class="card-bookings-pending-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
                 <div class="price-size">
                   <p>$<%= booking.hat.price %></p>
@@ -68,58 +64,55 @@
     </div>
   </div>
   <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
-    <div class="container">
-      <h1>All my <strong>bookings</strong> !</h1>
-    </div>
-
-    <div class="container-hats">
-      <div class="hats">
-        <% @sent_bookings.each do |booking| %>
-          <div class="card-hat">
-            <div class="card-hat-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
-            <div class="card-hat-text">
-              <h2><strong><%= booking.hat.title %></strong></h2>
-              <div class="price-size">
-                <p>$<%= booking.hat.price %></p>
-                <p>Size: <%= booking.hat.size %></p>
+    <div class="container-bookings-pending">
+      <h2>All my <strong>bookings</strong> !</h2>
+      <div class="container-hats">
+        <div class="hats">
+          <% @sent_bookings.each do |booking| %>
+            <div class="card-hat">
+              <div class="card-hat-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
+              <div class="card-hat-text">
+                <h2><strong><%= booking.hat.title %></strong></h2>
+                <div class="price-size">
+                  <p>$<%= booking.hat.price %></p>
+                  <p>Size: <%= booking.hat.size %></p>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
   <div class="tab-pane fade" id="items" role="tabpanel" aria-labelledby="items-tab">
-    <div class="container">
-      <h1>All my hats for <strong>rats</strong> !</h1>
+    <div class="container-bookings-pending">
+      <h2>All my hats for <strong>rats</strong> !</h2>
       <p><%= link_to 'Add a new hat', new_hat_path(@hat) %></p>
-    </div>
+      <div class="container-hats">
+        <div class="hats">
+          <% @hats.each do |hat| %>
+            <div class="card-hat-item">
+              <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+              <div class="card-hat-text">
+                <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
+                <div class="price-size">
+                  <p>$<%= hat.price %></p>
+                  <p>Size: <%= hat.size %></p>
+                </div>
+                <div class="edit-delete">
+                <%= link_to 'Edit', edit_hat_path(hat), class: "btn btn-success"  %>
 
-    <div class="container-hats">
-      <div class="hats">
-        <% @hats.each do |hat| %>
-          <div class="card-hat-item">
-            <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
-            <div class="card-hat-text">
-              <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
-              <div class="price-size">
-                <p>$<%= hat.price %></p>
-                <p>Size: <%= hat.size %></p>
+                <%= link_to "Delete",
+                    hat_path(hat),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+                </div>
+
               </div>
-              <div class="edit-delete">
-              <%= link_to 'Edit', edit_hat_path(hat), class: "btn btn-success"  %>
-
-              <%= link_to "Delete",
-                  hat_path(hat),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-              </div>
-
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-
   </div>
 </div>
