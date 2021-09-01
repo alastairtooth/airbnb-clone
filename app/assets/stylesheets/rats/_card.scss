@@ -59,13 +59,22 @@
 
 .card-rat {
   // height: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 93%;
-  padding: 0%;
-  text-align: left;
-    h2 {
+  display: flex;
+  height: 200px;
+  width: 90%;
+  margin: 4%;
+  padding: 2%;
+  background-color: #fafafa;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 6px;
+  box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137);
+    h2, a {
       font-size: 150%;
       margin-bottom: 0%;
+      color: white;
     }
 }
 

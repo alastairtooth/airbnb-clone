@@ -12,10 +12,3 @@
     </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_rat_path(@rat), class: "btn btn-success"  %>
-
-<%= link_to "Delete #{@rat.first_name}",
-            rat_path(@rat),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
