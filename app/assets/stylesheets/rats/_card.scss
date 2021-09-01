@@ -31,16 +31,14 @@
   display: grid;
   flex-grow: 1;
   text-align: center;
-  width: 70%;
   margin: 0 auto;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .container-rat-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 // Small devices (landscape phones, 576px and up)
