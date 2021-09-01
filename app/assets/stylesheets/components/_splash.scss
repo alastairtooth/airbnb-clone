@@ -1,0 +1,26 @@
+.splash {
+  background-image: asset-url('splash-image.jpeg');
+  background-size: cover;
+  height: 100vh;
+  h1 {
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    color: white;
+    font: $headers-font;
+  }
+  P {
+    position: absolute;
+    left: 103px;
+    bottom: 65px;
+    color: white;
+    font: $body-font;
+    font-weight: 200;
+  }
+  .button-submit {
+    position: absolute;
+    left: 103px;
+    bottom: 35px;
+    font-weight: 400;
+  }
+}
