@@ -1,14 +1,24 @@
-<%# AS OWNER %>
-<p><%= cl_image_tag @hat.photo.key %></p>
-<h2><%= @hat.title %></h2>
-<p><%= @hat.description %></p>
-<p><%= @hat.price %> • <%= @hat.size %></p>
-<p><%= @hat.available %></p>
+<div class="container-hat">
+  <div class="container-hat-card">
+    <div class="card-hat-img" style="background-image: url('<%= cl_image_path @hat.photo.key, height: 300, crop: :fill %>')"></div>
+    <div class="card-hat-text">
+      <h2><%= @hat.title %></h2>
+      <p><%= @hat.description %></p>
+      <p>$<%= @hat.price %> • Size: <%= @hat.size %> • Available: <%= @hat.available %></p>
+      <%= link_to 'Rent', new_hat_booking_path(@hat), class: "btn btn-success"  %>
+    </div>
+  </div>
+</div>
 
 
-<%= link_to 'Edit', edit_hat_path(@hat), class: "btn btn-success"  %>
 
-<%= link_to "Delete #{@hat.title}",
-            hat_path(@hat),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+
+<div class="edit-delete">
+  <h3>FOR OWNERS</h3>
+  <%= link_to 'Edit', edit_hat_path(@hat), class: "btn btn-primary"  %>
+
+  <%= link_to "Delete #{@hat.title}",
+              hat_path(@hat),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+</div>

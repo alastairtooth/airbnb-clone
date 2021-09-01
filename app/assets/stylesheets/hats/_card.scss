@@ -8,7 +8,6 @@
   box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137);
   border-radius: 4px;
   margin: 0 auto;
-  margin: 5%;
   margin-top: 4%;
   margin-bottom: 4%;
 }
@@ -25,4 +24,89 @@
 
 .new-hat {
   justify-self: center
+}
+
+.container-hats {
+  display: grid;
+  flex-grow: 1;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.hats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .hats {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 992px) {
+  .hats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card-hat {
+  // height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 93%;
+  padding: 0%;
+  text-align: left;
+    h2 {
+      font-size: 150%;
+      margin-bottom: 0%;
+    }
+}
+
+.card-hat-img {
+  // height: 50%;
+  aspect-ratio: 16 / 12;
+  // border-radius: 8px;
+  background-size: cover;
+}
+
+.card-hat-text {
+  padding: 3%;
+    a {
+      font-weight: lighter;
+      color: black;
+    }
+}
+
+.price-size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-hat {
+  display: grid;
+  flex-grow: 1;
+  background-color: #fafafa;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.2);;
+  border-radius: 4px;
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.container-hat-card {
+  justify-self: center;
+  width: 100%;
+}
+
+.edit-delete {
+  text-align: center;
 }

@@ -26,3 +26,60 @@
 .new-rat {
   justify-self: center
 }
+
+.container-rat {
+  display: grid;
+  flex-grow: 1;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.container-rat-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .container-rat-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 992px) {
+  .container-rat-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card-rat {
+  // height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 93%;
+  padding: 0%;
+  text-align: left;
+    h2 {
+      font-size: 150%;
+      margin-bottom: 0%;
+    }
+}
+
+.card-rat-img {
+  // height: 50%;
+  aspect-ratio: 16 / 12;
+  // border-radius: 8px;
+  background-size: cover;
+}
+
+.card-rat-text {
+  padding: 3%;
+    a {
+      font-weight: lighter;
+      color: black;
+    }
+}

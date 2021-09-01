@@ -1,7 +1,17 @@
-<h2><%= @rat.first_name %></h2>
-<p><%= @rat.last_name %></p>
-<p><%= @rat.email %></p>
-<p><%= cl_image_tag @rat.photo.key %></p>
+<div class="container-hat">
+  <div class="container-hat-card">
+    <% if @rat.photo.attached? %>
+        <div class="card-hat-img" style="background-image: url('<%= cl_image_path @rat.photo.key, height: 300, crop: :fill %>')"></div>
+    <% else %>
+        <div class="card-hat-img" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
+    <% end %>
+    <div class="card-hat-text">
+      <h2><%= @rat.first_name %></h2>
+      <p><%= @rat.last_name %></p>
+      <p><%= @rat.email %></p>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_rat_path(@rat), class: "btn btn-success"  %>
 

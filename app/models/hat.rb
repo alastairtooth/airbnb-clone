@@ -1,4 +1,5 @@
 class Hat < ApplicationRecord
+  belongs_to :rat
   has_many :bookings
   has_one_attached :photo
 
@@ -11,5 +12,5 @@ class Hat < ApplicationRecord
   validates :size, presence: true, inclusion: { in: SIZES }
 
   validates :available, presence: true
-  # validates :photo, presence: true
+  validates :photo, presence: true
 end
