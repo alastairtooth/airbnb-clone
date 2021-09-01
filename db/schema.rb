@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_070624) do
+ActiveRecord::Schema.define(version: 2021_09_01_013134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 2021_08_31_070624) do
 
   create_table "bookings", force: :cascade do |t|
     t.boolean "accepted"
-    t.bigint "hat_id", null: false
-    t.bigint "rat_id", null: false
+    t.bigint "hats_id", null: false
+    t.bigint "rats_id", null: false
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["hat_id"], name: "index_bookings_on_hat_id"
-    t.index ["rat_id"], name: "index_bookings_on_rat_id"
+    t.index ["hats_id"], name: "index_bookings_on_hats_id"
+    t.index ["rats_id"], name: "index_bookings_on_rats_id"
   end
 
   create_table "hats", force: :cascade do |t|
@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 2021_08_31_070624) do
     t.integer "price"
     t.string "size"
     t.boolean "available"
-    t.bigint "rat_id", null: false
+    t.bigint "rats_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["rat_id"], name: "index_hats_on_rat_id"
+    t.index ["rats_id"], name: "index_hats_on_rats_id"
   end
 
   create_table "rats", force: :cascade do |t|
@@ -70,12 +70,15 @@ ActiveRecord::Schema.define(version: 2021_08_31_070624) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_rats_on_email", unique: true
     t.index ["reset_password_token"], name: "index_rats_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "hats"
-  add_foreign_key "bookings", "rats"
-  add_foreign_key "hats", "rats"
+  add_foreign_key "bookings", "hats", column: "hats_id"
+  add_foreign_key "bookings", "rats", column: "rats_id"
+  add_foreign_key "hats", "rats", column: "rats_id"
 end
