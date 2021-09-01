@@ -1,8 +1,9 @@
 class DashboardController < ApplicationController
   def dashboard
-    @bookings_sent = Booking.where(:id_rats == @user)
+    @sent_bookings = current_rat.bookings
     # @bookings_recd = Booking.where(current_rat.hats)
     @hats = current_rat.hats
-    @bookings = current_rat.bookings
+    @pending_bookings = Booking.where(status: 'pending')
+    @historical_bookings = Booking.where(status: ['accepted', 'declined'])
   end
 end

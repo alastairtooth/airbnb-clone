@@ -1,0 +1,65 @@
+.container-bookings-pending {
+  display: grid;
+  flex-grow: 1;
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.bookings-pending {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .bookings-pending {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 992px) {
+  .bookings-pending {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+.card-bookings-pending {
+  // height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 93%;
+  padding: 0%;
+  text-align: left;
+  border-radius: 5%;
+    h2 {
+      font-size: 150%;
+      margin-bottom: 0%;
+    }
+}
+
+.card-bookings-pending-img {
+  // height: 50%;
+  aspect-ratio: 16 / 12;
+  // border-radius: 8px;
+  background-size: cover;
+  border-radius: 5% 5% 0% 0%;
+}
+
+.card-bookings-pending-text {
+  padding: 3%;
+    a {
+      font-weight: lighter;
+      color: black;
+    }
+}
+
+.price-size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
