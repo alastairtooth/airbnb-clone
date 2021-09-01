@@ -15,8 +15,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @hat = Hat.find(params[:hat_id])
     @booking.hat = @hat
+    @booking.rat = current_rat
     if @booking.save
-      redirect_to hat_path(@hat)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -32,7 +33,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
 
-    redirect_to hat_path(@booking.hat)
+    redirect_to dashboard_path
   end
 
   private
