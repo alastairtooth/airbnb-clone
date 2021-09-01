@@ -38,7 +38,7 @@
 
 .container-rat-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -56,17 +56,9 @@
 }
 
 .card-rat {
-  // height: 100%;
-  display: flex;
   height: 200px;
-  width: 90%;
-  margin: 4%;
-  padding: 2%;
-  background-color: #fafafa;
   background-position: center;
   background-size: cover;
-  justify-content: center;
-  align-items: flex-end;
   border-radius: 5%;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
     h2, a {
@@ -77,10 +69,7 @@
 }
 
 .card-rat-img {
-  // height: 50%;
   aspect-ratio: 16 / 12;
-  // border-radius: 8px;
-  background-size: cover;
 }
 
 .card-rat-text {
@@ -172,4 +161,12 @@
   display: flex;
   align-items: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.container-rat-card-profile {
+  margin: 4%;
+  .rat-name, a {
+    color: black;
+    justify-content: space-between;
+  }
 }
