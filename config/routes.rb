@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'dashboard', to: 'dashboard#dashboard'
   resources :hats do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:new, :create]
   end
   resources :rats
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:destroy, :edit, :update]
 end

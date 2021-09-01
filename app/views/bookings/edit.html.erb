@@ -1,0 +1,9 @@
+<div class="new-hats">
+  <div class="new-hat">
+    <h1>Do you accept this <strong>booking</strong> ?</h1>
+    <%= simple_form_for [@hat, @booking] do |f| %>
+      <%= f.input :accepted %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
