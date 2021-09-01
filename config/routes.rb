@@ -7,5 +7,4 @@ Rails.application.routes.draw do
     resources :bookings
   end
   resources :rats
-  resources :bookings
 end

@@ -1,17 +1,8 @@
 <div class="container-rat">
   <div class="container-rat-card">
   <% @rats.each do |rat| %>
-    <div class="card-rat">
-      <% if rat.photo.attached? %>
-          <div class="card-rat-img" style="background-image: url('<%= cl_image_path rat.photo.key, height: 300, crop: :fill %>')"></div>
-      <% else %>
-          <div class="card-rat-img" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
-      <% end %>
-      <div class="card-rat-text">
-        <h2><%= rat.first_name %></h2>
-        <p><%= rat.last_name %></p>
-        <p><%= rat.email %></p>
-      </div>
+    <div class="card-rat" style="background-image: url('<%= cl_image_path rat.photo.key, height: 300, crop: :fill %>')">
+      <h2><strong><%= link_to rat.first_name, rat_path(rat) %></strong></h2>
     </div>
   <% end %>
   </div>
