@@ -98,7 +98,9 @@
                   <div class="price-size">
                     <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
                     <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
+                    <p><i class="fas fa-question-circle"></i> Available: <%= hat.available %></p>
                   </div>
+                  <br>
                   <div class="edit-delete">
                     <%= link_to 'Edit', edit_hat_path(hat), class: "btn btn-success"  %>
 
