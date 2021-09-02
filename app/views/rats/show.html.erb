@@ -1,34 +1,43 @@
-<div class="container-rats-profile">
-  <div class="container-rat-profile">
-    <div class="container-rat-card-profile-big">
-      <% if @rat.photo.attached? %>
-          <div class="card-rat-img-profile" style="background-image: url('<%= cl_image_path @rat.photo.key, height: 300, crop: :fill %>')"></div>
-      <% else %>
-          <div class="card-rat-img-profile" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
-      <% end %>
-      <div class="card-rat-text-profile">
-        <h2><%= @rat.first_name %> <%= @rat.last_name %></h2>
-        <p><%= @rat.email %></p>
-      </div>
+<div class="container-rat-profile">
+    <% if @rat.photo.attached? %>
+        <div class="card-rat-img-profile" style="background-image: url('<%= cl_image_path @rat.photo.key, height: 300, crop: :fill %>')"></div>
+    <% else %>
+        <div class="card-rat-img-profile" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
+    <% end %>
+    <div class="card-rat-text-profile">
+      <h2><%= @rat.first_name %> <%= @rat.last_name %></h2>
+      <p><%= @rat.email %></p>
+      <p class="value3 mt-sm"><i class="fab fa-redhat"></i> <%= @rat.hats.count %></p>
     </div>
-  </div>
-  <div class="container-hats-rat-profile">
-      <h2>All my hats for <strong>rats</strong> !</h2>
-      <div class="container-hats-rat-profile-item">
-        <div class="hats-rat">
+</div>
+
+
+<div class="container-bookings-pending">
+      <div class="pending-title-container">
+        <h2>All <%= @rat.first_name %>'s hats for <strong>rats</strong> !</h2>
+      </div>
+      <div class="bookings-pending">
           <% @hats.each do |hat| %>
-            <div class="card-hat-rat-item">
-              <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
-              <div class="card-hat-text">
-                <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
-                <div class="price-size">
-                  <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
-                  <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
+            <div class="card-pending-container">
+              <div class="card-bookings-pending">
+                <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+                <div class="card-hat-text">
+                  <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
+                  <div class="price-size">
+                    <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
+                    <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
+                  </div>
+                  <div class="edit-delete">
+                    <%= link_to 'Edit', edit_hat_path(hat), class: "btn btn-success"  %>
+
+                    <%= link_to "Delete",
+                        hat_path(hat),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+                  </div>
                 </div>
               </div>
             </div>
           <% end %>
-        </div>
       </div>
     </div>
-</div>

@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking.hat = @hat
     @booking.rat = current_rat
     if @booking.save
+      flash[:success] = "Successfully created booking!"
       redirect_to dashboard_path
     else
       render :new

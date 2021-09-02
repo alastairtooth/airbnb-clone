@@ -1,20 +1,23 @@
-<div class="community-grid">
-  <div class="banner-community" style="background-image: url('<%= cl_image_path "https://res.cloudinary.com/mathildepfr/image/upload/v1630549317/Illustration_Rat_pdqjxd.jpg"%>')">
-    <h2>Welcome in our community of <strong>rats</strong> !</h2>
+  <div class="row ng-scope">
+      <div class="col-md-4">
+        <div class="banner-community" style="background-image: url('<%= cl_image_path "https://res.cloudinary.com/mathildepfr/image/upload/v1630549317/Illustration_Rat_pdqjxd.jpg"%>')">
+        </div>
+        <div class="text-community"><p>Welcome in <br> our community of <strong>rats</strong> !</p></div>
+      </div>
+      <div class="col-md-8">
+              <% @rats.each do |rat| %>
+                <div class="container-rat-profile-index">
+                    <% if rat.photo.attached? %>
+                        <div class="card-rat-img-profile-index" style="background-image: url('<%= cl_image_path rat.photo.key, height: 300, crop: :fill %>')"></div>
+                    <% else %>
+                        <div class="card-rat-img-profile-index" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
+                    <% end %>
+                    <div class="card-rat-text-profile">
+                      <h2><%= rat.first_name %> <%= rat.last_name %></h2>
+                      <p><%= rat.email %></p>
+                      <p class="value3 mt-sm"><i class="fab fa-redhat"></i> <%= rat.hats.count %></p>
+                    </div>
+                </div>
+              <% end %>
+      </div>
   </div>
-
-  <div class="container-rat">
-    <div class="container-rat-card">
-        <% @rats.each do |rat| %>
-          <div class="container-rat-card-profile">
-            <div class="card-rat" style="background-image: url('<%= cl_image_path rat.photo.key, height: 300, crop: :fill %>')">
-            </div>
-            <div class="rat-name">
-              <h2><%= link_to rat.first_name , rat_path(rat) %> <%= rat.last_name %></h2>
-              <h2><i class="fab fa-redhat"></i> <%= rat.hats.count %></h2>
-            </div>
-          </div>
-        <% end %>
-    </div>
-  </div>
-</div>
