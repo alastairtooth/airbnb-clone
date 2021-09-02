@@ -1,6 +1,6 @@
 <div class="container-rats-profile">
   <div class="container-rat-profile">
-    <div class="container-rat-card-profile">
+    <div class="container-rat-card-profile-big">
       <% if @rat.photo.attached? %>
           <div class="card-rat-img-profile" style="background-image: url('<%= cl_image_path @rat.photo.key, height: 300, crop: :fill %>')"></div>
       <% else %>
