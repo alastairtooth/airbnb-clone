@@ -19,9 +19,9 @@
               <div class="card-hat-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
               <div class="card-hat-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
-                <p><i class="fas fa-question-circle"></i></i> Status: <%= booking.status %></p>
-                <p><i class="fas fa-calendar"></i></i></i> From: <%= booking.start_date %></p>
-                <p><i class="fas fa-calendar-times"></i></i></i> To: <%= booking.end_date %></p>
+                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
+                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
               </div>
             </div>
           </div>
@@ -39,9 +39,9 @@
               <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
               <div class="card-hat-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
-                <p><i class="fas fa-question-circle"></i></i> Status: <%= booking.status %></p>
-                <p><i class="fas fa-calendar"></i></i></i> From: <%= booking.start_date %></p>
-                <p><i class="fas fa-calendar-times"></i></i></i> To: <%= booking.end_date %></p>
+                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
+                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
                 <% if booking.status == 'pending' %>
                   <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-success" %>
                   <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-danger" %>
@@ -66,9 +66,9 @@
               <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
               <div class="card-hat-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
-                <p><i class="fas fa-question-circle"></i></i> Status: <%= booking.status %></p>
-                <p><i class="fas fa-calendar"></i></i></i> From: <%= booking.start_date %></p>
-                <p><i class="fas fa-calendar-times"></i></i></i> To: <%= booking.end_date %></p>
+                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
+                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
                 <% if booking.status == 'pending' %>
                   <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-primary" %>
                   <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-primary" %>
