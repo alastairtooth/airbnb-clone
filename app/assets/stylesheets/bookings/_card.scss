@@ -41,13 +41,25 @@
   width: calc(100% / 5); // same as 20%
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .card-pending-container {
+    width: 100%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 992px) {
+  .card-pending-container {
+    width: calc(100% / 2);
+  }
+}
+
 .card-bookings-pending {
   // height: 100%;
   width: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
-
-
   h2 {
     font-size: 150%;
     margin-bottom: 10px;
