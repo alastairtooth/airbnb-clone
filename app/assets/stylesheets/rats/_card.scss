@@ -28,17 +28,13 @@
 }
 
 .container-rat {
-  display: grid;
-  flex-grow: 1;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  width: 100%;
+  margin-top: 5%;
 }
 
 .container-rat-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -151,16 +147,19 @@
 }
 
 .banner-community {
-  filter: grayscale(100);
-  height: 200px;
-  background-position: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 100%;
   background-size: cover;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-position: center;
+  text-align: left;
+  border-radius: 5%;
+  margin: 5%;
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      background-color: #ffffff4a;
+      color: white;
+    }
 }
 
 .container-rat-card-profile {
@@ -173,4 +172,9 @@
 
 .container-rat-card-profile-big {
   margin: 0%;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
