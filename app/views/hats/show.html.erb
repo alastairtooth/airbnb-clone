@@ -8,6 +8,9 @@
         <p><i class="fas fa-money-bill-alt"></i> $<%= @hat.price %>    </p>
         <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= @hat.size %></p>
         <p><i class="fas fa-question-circle"></i></i> Available: <%= @hat.available %></p>
+        <%= link_to rat_path(@hat.rat) do %>
+          <p class="text-warning">See Owner</p>
+        <% end %>
       </div>
       <br>
       <%= link_to 'Rent', new_hat_booking_path(@hat), class: "btn btn-success"  %>
