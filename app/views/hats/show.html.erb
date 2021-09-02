@@ -4,21 +4,12 @@
     <div class="card-hat-text">
       <h2><%= @hat.title %></h2>
       <p><%= @hat.description %></p>
-      <p>$<%= @hat.price %> • Size: <%= @hat.size %> • Available: <%= @hat.available %></p>
+      <div class="price-size">
+        <p><i class="fas fa-money-bill-alt"></i> $<%= @hat.price %>    </p>
+        <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= @hat.size %></p>
+        <p><i class="fas fa-question-circle"></i></i> Available: <%= @hat.available %></p>
+      </div>
       <%= link_to 'Rent', new_hat_booking_path(@hat), class: "btn btn-success"  %>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="edit-delete">
-  <h3>FOR OWNERS</h3>
-  <%= link_to 'Edit', edit_hat_path(@hat), class: "btn btn-primary"  %>
-
-  <%= link_to "Delete #{@hat.title}",
-              hat_path(@hat),
-              method: :delete,
-              data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
 </div>

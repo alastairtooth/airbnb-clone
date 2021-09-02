@@ -13,6 +13,7 @@ class RatsController < ApplicationController
 
   def show
     @rat = Rat.find(params[:id])
+    @hats = @rat.hats
   end
 
   def new
