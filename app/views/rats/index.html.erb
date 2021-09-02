@@ -13,7 +13,9 @@
                         <div class="card-rat-img-profile-index" style="background-image: url('<%= image_tag 'ratlogo.png', height: 300, crop: :fill %>')"></div>
                     <% end %>
                     <div class="card-rat-text-profile">
+                    <%= link_to rat_path(rat) do %>
                       <h2><%= rat.first_name %> <%= rat.last_name %></h2>
+                    <% end %>
                       <p><%= rat.email %></p>
                       <div class="count-btn">
                         <h4 class="value3 mt-sm"><i class="fab fa-redhat"></i> <%= rat.hats.count %></h4>

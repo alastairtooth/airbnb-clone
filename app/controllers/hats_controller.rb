@@ -5,6 +5,7 @@ class HatsController < ApplicationController
 
   def show
     @hat = Hat.find(params[:id])
+    @hats = Hat.all
   end
 
   def new

@@ -9,7 +9,34 @@
         <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= @hat.size %></p>
         <p><i class="fas fa-question-circle"></i></i> Available: <%= @hat.available %></p>
       </div>
+      <br>
       <%= link_to 'Rent', new_hat_booking_path(@hat), class: "btn btn-success"  %>
     </div>
+  </div>
+</div>
+
+<div class="container-bookings-pending">
+  <div class="pending-title-container">
+    <h2>More <strong>hats</strong> !</h2>
+  </div>
+  <div class="bookings-pending">
+    <% @hats.each do |hat| %>
+      <div class="card-pending-container">
+        <div class="card-bookings-pending">
+          <%= link_to hat_path(hat) do %>
+            <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+          <% end %>
+          <div class="card-hat-text">
+            <h2><strong><%= hat.title %></strong></h2>
+            <p><%= hat.description %></p>
+            <div class="price-size">
+              <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
+              <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
+              <p><i class="fas fa-question-circle"></i></i> Available: <%= hat.available %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

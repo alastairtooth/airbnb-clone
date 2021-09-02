@@ -6,12 +6,15 @@
     <div class="hats">
       <% @hats.each do |hat| %>
         <div class="card-hat">
-          <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+          <%= link_to hat_path(hat) do %>
+            <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+          <% end %>
           <div class="card-hat-text">
             <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
             <div class="price-size">
               <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
               <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
+              <p><i class="fas fa-question-circle"></i></i> Available: <%= hat.available %></p>
             </div>
           </div>
         </div>

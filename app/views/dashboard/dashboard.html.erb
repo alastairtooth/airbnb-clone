@@ -90,7 +90,9 @@
           <% @hats.each do |hat| %>
             <div class="card-pending-container">
               <div class="card-bookings-pending">
-                <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+                <%= link_to hat_path(hat) do %>
+                  <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+                <% end %>
                 <div class="card-hat-text">
                   <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
                   <div class="price-size">
