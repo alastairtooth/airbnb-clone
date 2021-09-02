@@ -81,6 +81,10 @@
     a {
       font-weight: lighter;
       color: black;
+      margin-bottom: 0;
+    }
+    h2 {
+      margin-bottom: 0;
     }
 }
 
@@ -95,7 +99,7 @@
   flex-grow: 1;
   background-color: #fafafa;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.2);;
-  border-radius: 4px;
+  border-radius: 5%;
   text-align: center;
   width: 40%;
   margin: 0 auto;

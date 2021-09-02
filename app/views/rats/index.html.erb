@@ -1,9 +1,18 @@
+<div class="banner-community" style="background-image: url('https://1.bp.blogspot.com/-nFDtnTICHQw/WR5gqXdARbI/AAAAAAAAABk/widN9Lkj5yEDozXVgd4lfOtpEWoWQsRHgCLcB/s1600/c.jpg')">
+  <h1>Our community of <strong>rats</strong> !</h1>
+</div>
+
 <div class="container-rat">
   <div class="container-rat-card">
-  <% @rats.each do |rat| %>
-    <div class="card-rat" style="background-image: url('<%= cl_image_path rat.photo.key, height: 300, crop: :fill %>')">
-      <h2><strong><%= link_to rat.first_name, rat_path(rat) %></strong></h2>
-    </div>
-  <% end %>
+      <% @rats.each do |rat| %>
+        <div class="container-rat-card-profile">
+          <div class="card-rat" style="background-image: url('<%= cl_image_path rat.photo.key, height: 300, crop: :fill %>')">
+          </div>
+          <div class="rat-name">
+            <h2><%= link_to rat.first_name , rat_path(rat) %> <%= rat.last_name %></h2>
+            <h2><i class="fab fa-redhat"></i> <%= rat.hats.count %></h2>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
