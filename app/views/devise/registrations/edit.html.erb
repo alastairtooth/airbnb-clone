@@ -21,6 +21,9 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :address,
+                required: false,
+                input_html: { autocomplete: "new-address"} %>
   </div>
 
   <div class="form-actions">

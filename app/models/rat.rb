@@ -11,4 +11,7 @@ class Rat < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :photo, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

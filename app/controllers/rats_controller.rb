@@ -1,6 +1,14 @@
 class RatsController < ApplicationController
   def index
     @rats = Rat.all
+
+    @markers = @rats.geocoded.map do |rat|
+      {
+        lat: rat.latitude,
+        lng: rat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { rat: rat })
+      }
+    end
   end
 
   def show
@@ -39,6 +47,6 @@ class RatsController < ApplicationController
   private
 
   def rat_params
-    params.require(:rat).permit(:first_name, :last_name, :email, :photo)
+    params.require(:rat).permit(:first_name, :last_name, :email, :address, :photo)
   end
 end
