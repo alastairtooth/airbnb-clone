@@ -10,7 +10,7 @@
           </div>
           <div class="rat-name">
             <h2><%= link_to rat.first_name , rat_path(rat) %></h2>
-            <i class="fab fa-redhat"></i>
+            <h2><i class="fab fa-redhat"> <%= rat.hats.count %></i></h2>
           </div>
         </div>
       <% end %>
