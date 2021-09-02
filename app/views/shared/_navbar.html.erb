@@ -20,8 +20,14 @@
         <li class="nav-item">
           <%= link_to "Shop", hats_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Community", rats_path, class: "nav-link" %>
+        <li class="nav-item dropdown">
+          <p class="dropdown-toggle nav-link" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Community
+          </p>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "All rats", rats_path, class: "dropdown-item" %>
+            <%= link_to "Map", rats_map_path, class: "dropdown-item" %>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <% if current_rat.photo.attached? %>

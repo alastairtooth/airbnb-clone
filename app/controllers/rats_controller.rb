@@ -1,19 +1,25 @@
 class RatsController < ApplicationController
   def index
     @rats = Rat.all
+  end
 
+  def map
+    @rats = Rat.all
     @markers = @rats.geocoded.map do |rat|
       {
         lat: rat.latitude,
         lng: rat.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { rat: rat })
+        info_window: render_to_string(partial: "info_window", locals: { rat: rat }),
+        image_url: helpers.asset_url("ratmarker.png")
       }
     end
   end
 
   def show
-    @rat = Rat.find(params[:id])
-    @hats = @rat.hats
+    unless params[:id] == "map"
+      @rat = Rat.find(params[:id])
+      @hats = @rat.hats
+    end
   end
 
   def new

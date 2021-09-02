@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :rats
+  get "rats-map", to: "rats#map"
   resources :bookings, only: [:destroy, :edit, :update]
 end
