@@ -55,7 +55,7 @@
   height: 200px;
   background-position: center;
   background-size: cover;
-  border-radius: 5%;
+  border-radius: 8px;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
     h2, a {
       font-size: 150%;
@@ -107,6 +107,7 @@
 
 .card-rat-text-profile {
   padding: 5%;
+  width: 100%;
     a {
       font-weight: lighter;
       color: black;
@@ -140,7 +141,7 @@
   height: 93%;
   padding: 0%;
   text-align: left;
-  border-radius: 5%;
+  border-radius: 8px;
 }
 
 .rat-name {
@@ -152,12 +153,13 @@
 
 .banner-community {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 25%;
+  height: 386px;
   background-size: cover;
   background-position: center;
   text-align: left;
   border-radius: 8px;
-  margin: 5%;
+  margin: 2%;
+  margin-right: 0;
     h2 {
       text-align: center;
       font-size: 3rem;
@@ -191,10 +193,11 @@
   background-color: white;
   margin: 2%;
   border-radius: 8px;
-  width: 50%;
+  margin-left: 0;
     .card-rat-img-profile-index {
-      width: 40%;
+      width: 60%;
       background-position: center;
       background-size: cover;
+      border-radius: 8px 0 0 8px;
     }
 }
