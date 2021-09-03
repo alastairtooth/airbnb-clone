@@ -27,8 +27,6 @@ end
 
 rats = Rat.all
 
-
-
 rats.each do |rat|
   2.times do
     hat = Hat.new(

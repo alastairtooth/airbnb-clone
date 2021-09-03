@@ -19,12 +19,15 @@
               <div class="card-hat-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
               <div class="card-hat-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
-                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
-                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
-                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
+                <p><i class="fas fa-question-circle"></i><span class="text-muted"> Status: </span><%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i><span class="text-muted"> From: </span><%= booking.start_date.strftime("%d %B %y") %></p>
+                <p><i class="fas fa-calendar-times"></i><span class="text-muted"> To: </span><%= booking.end_date.strftime("%d %B %y") %></p>
               </div>
             </div>
           </div>
+        <% end %>
+        <% if @sent_bookings.empty? %>
+          <p> No pending booking </p>
         <% end %>
       </div>
     </div>
@@ -39,9 +42,9 @@
               <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
               <div class="card-hat-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
-                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
-                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
-                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
+                <p><i class="fas fa-question-circle"></i><span class="text-muted"> Status: </span><%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i><span class="text-muted"> From: </span><%= booking.start_date.strftime("%d %B %y") %></p>
+                <p><i class="fas fa-calendar-times"></i><span class="text-muted"> To: </span><%= booking.end_date.strftime("%d %B %y") %></p>
                 <% if booking.status == 'pending' %>
                   <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-success" %>
                   <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-danger" %>
@@ -66,9 +69,9 @@
               <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
               <div class="card-hat-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
-                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
-                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
-                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
+                <p><i class="fas fa-question-circle"></i><span class="text-muted"> Status: </span><%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i><span class="text-muted"> From: </span><%= booking.start_date.strftime("%d %B %y") %></p>
+                <p><i class="fas fa-calendar-times"></i><span class="text-muted"> To: </span><%= booking.end_date.strftime("%d %B %y") %></p>
                 <% if booking.status == 'pending' %>
                   <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-primary" %>
                   <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-primary" %>
@@ -76,6 +79,9 @@
               </div>
             </div>
           </div>
+        <% end %>
+        <% if @historical_bookings.empty? %>
+          <p> No pending booking </p>
         <% end %>
       </div>
     </div>
@@ -96,9 +102,9 @@
                 <div class="card-hat-text">
                   <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
                   <div class="price-size">
-                    <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
-                    <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
-                    <p><i class="fas fa-question-circle"></i> Available: <%= hat.available %></p>
+                    <p><i class="fas fa-money-bill-alt"></i><span class="text-muted"> $</span><%= hat.price %>    </p>
+                    <p><i class="fas fa-hat-cowboy-side"></i><span class="text-muted"> Size: </span><%= hat.size %></p>
+                    <p><i class="fas fa-question-circle"></i><span class="text-muted"> Available: </span><%= hat.available ? '<i class="fas fa-check-circle text-success"></i>'.html_safe : '<i class="fas fa-times-circle text-danger"></i>'.html_safe %></p>
                   </div>
                   <br>
                   <div class="edit-delete">

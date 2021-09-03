@@ -10,16 +10,14 @@ class RatsController < ApplicationController
         lat: rat.latitude,
         lng: rat.longitude,
         info_window: render_to_string(partial: "info_window", locals: { rat: rat }),
-        image_url: helpers.asset_url("ratmarker.png")
+        image_url: helpers.asset_url("rat-gold.png")
       }
     end
   end
 
   def show
-    unless params[:id] == "map"
-      @rat = Rat.find(params[:id])
-      @hats = @rat.hats
-    end
+    @rat = Rat.find(params[:id])
+    @hats = @rat.hats
   end
 
   def new
