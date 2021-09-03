@@ -1,5 +1,5 @@
 body{
-background-color: #eee;
+  background-color: #eee;
 }
 
 .search-result-categories>li>a {
@@ -88,4 +88,10 @@ background-color: #eee;
       border: none;
       color: white;
     }
+}
+
+.row {
+  margin-right: 150px;
+  margin-left: 150px;
+  margin-top: 50px;
 }

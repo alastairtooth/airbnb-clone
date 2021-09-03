@@ -26,6 +26,9 @@
             </div>
           </div>
         <% end %>
+        <% if @sent_bookings.empty? %>
+          <p> No pending booking </p>
+        <% end %>
       </div>
     </div>
     <div class="container-bookings-pending">
@@ -76,6 +79,9 @@
               </div>
             </div>
           </div>
+        <% end %>
+        <% if @historical_bookings.empty? %>
+          <p> No pending booking </p>
         <% end %>
       </div>
     </div>
