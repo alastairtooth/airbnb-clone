@@ -20,19 +20,19 @@
   padding-left: calc(3% - 10px);
 }
 
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 100px) and (max-width: 768px) {
-//   .bookings-pending {
-//     grid-template-columns: 1fr;
-//   }
-// }
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .bookings-pending {
+    width: 100%;
+  }
+}
 
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 767px) and (max-width: 992px) {
-//   .bookings-pending {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 992px) {
+  .bookings-pending {
+    width: calc(100% / 2);
+  }
+}
 
 
 .card-pending-container {
@@ -49,9 +49,9 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 767px) and (max-width: 992px) {
+@media (min-width: 767px) and (max-width: 1700px) {
   .card-pending-container {
-    width: calc(100% / 2);
+    width: calc(100% / 3);
   }
 }
 

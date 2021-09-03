@@ -114,6 +114,26 @@
     }
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .card-rat-text-profile {
+    font-size: 60%;
+    h4, a, i, h2, p {
+      font-size: 120%;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 1700px) {
+  .card-rat-text-profile {
+    font-size: 60%;
+    h4, a, i, h2, p {
+      font-size: 120%;
+    }
+  }
+}
+
 .container-hats-rat-profile {
   display: inline-block;
   flex-grow: 1;
@@ -200,4 +220,10 @@
       background-size: cover;
       border-radius: 8px 0 0 8px;
     }
+}
+
+@media (max-width: 1700px) {
+  .container-rat-profile-index {
+    margin-left: 2%;
+  }
 }

@@ -107,6 +107,20 @@
   margin-bottom: 1%;
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .container-hat {
+    width: 100%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 1700px) {
+  .container-hat {
+    width: 50%;
+  }
+}
+
 .container-hat-card {
   justify-self: center;
   width: 100%;
