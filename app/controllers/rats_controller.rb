@@ -1,14 +1,6 @@
 class RatsController < ApplicationController
   def index
     @rats = Rat.all
-    @markers = @rats.geocoded.map do |rat|
-      {
-        lat: rat.latitude,
-        lng: rat.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { rat: rat }),
-        image_url: helpers.asset_url("ratmarker.png")
-      }
-    end
   end
 
   def map
@@ -18,7 +10,7 @@ class RatsController < ApplicationController
         lat: rat.latitude,
         lng: rat.longitude,
         info_window: render_to_string(partial: "info_window", locals: { rat: rat }),
-        image_url: helpers.asset_url("ratmarker.png")
+        image_url: helpers.asset_url("rat-gold.png")
       }
     end
   end

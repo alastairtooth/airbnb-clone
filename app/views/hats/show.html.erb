@@ -7,7 +7,7 @@
       <div class="price-size">
         <p><i class="fas fa-money-bill-alt"></i> $<%= @hat.price %>    </p>
         <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= @hat.size %></p>
-        <p><i class="fas fa-question-circle"></i></i> Available: <%= @hat.available %></p>
+        <p><i class="fas fa-question-circle"></i></i> Available: <%= @hat.available ? '<i class="fas fa-check-circle text-success"></i>'.html_safe : '<i class="fas fa-times-circle text-danger"></i>'.html_safe %></p>
         <%= link_to rat_path(@hat.rat) do %>
           <p class="text-warning">See Owner</p>
         <% end %>
@@ -34,8 +34,8 @@
             <p><%= hat.description %></p>
             <div class="price-size">
               <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
-              <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
-              <p><i class="fas fa-question-circle"></i></i> Available: <%= hat.available %></p>
+              <p><i class="fas fa-hat-cowboy-side"></i><span class="text-muted"> Size: </span><%= hat.size %></p>
+              <p><i class="fas fa-question-circle"></i><span class="text-muted"> Available: </span><%= hat.available ? '<i class="fas fa-check-circle text-success"></i>'.html_safe : '<i class="fas fa-times-circle text-danger"></i>'.html_safe %></p>
             </div>
           </div>
         </div>
