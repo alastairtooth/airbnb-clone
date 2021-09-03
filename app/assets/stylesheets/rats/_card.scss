@@ -28,17 +28,13 @@
 }
 
 .container-rat {
-  display: grid;
-  flex-grow: 1;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  width: 100%;
+  margin-top: 5%;
 }
 
 .container-rat-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -59,7 +55,7 @@
   height: 200px;
   background-position: center;
   background-size: cover;
-  border-radius: 5%;
+  border-radius: 8px;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
     h2, a {
       font-size: 150%;
@@ -90,27 +86,65 @@
   height:  86%;
   padding: 0%;
   text-align: left;
-  border-radius: 5%;
-  margin: 5%;
+  display: flex;
+  background-color: white;
+  margin: 2%;
+  width: 30%;
+  border-radius: 8px;
     h2 {
       font-size: 150%;
       margin-bottom: 0%;
     }
 }
 
+@media (min-width: 100px) and (max-width: 768px) {
+  .container-rat-profile {
+    width: 95%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 1700px) {
+  .container-rat-profile {
+    font-size: 80%;
+  }
+}
+
 .card-rat-img-profile {
   aspect-ratio: 16 / 12;
   // border-radius: 8px;
   background-size: cover;
-  border-radius: 5% 5% 0% 0%;
+  border-radius: 8px 0px 0px 8px;
+  width: 50%;
 }
 
 .card-rat-text-profile {
-  padding: 3%;
+  padding: 5%;
+  width: 100%;
     a {
       font-weight: lighter;
       color: black;
     }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .card-rat-text-profile {
+    font-size: 60%;
+    h4, a, i, h2, p {
+      font-size: 120%;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 1700px) {
+  .card-rat-text-profile {
+    font-size: 60%;
+    h4, a, i, h2, p {
+      font-size: 120%;
+    }
+  }
 }
 
 .container-hats-rat-profile {
@@ -140,7 +174,7 @@
   height: 93%;
   padding: 0%;
   text-align: left;
-  border-radius: 5%;
+  border-radius: 8px;
 }
 
 .rat-name {
@@ -151,16 +185,20 @@
 }
 
 .banner-community {
-  filter: grayscale(100);
-  height: 200px;
-  background-position: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 386px;
   background-size: cover;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-position: center;
+  text-align: left;
+  border-radius: 8px;
+  margin: 2%;
+  margin-right: 0;
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      background-color: #ffffff4a;
+      color: white;
+    }
 }
 
 .container-rat-card-profile {
@@ -173,4 +211,32 @@
 
 .container-rat-card-profile-big {
   margin: 0%;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container-rat-profile-index {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 0%;
+  text-align: left;
+  display: flex;
+  background-color: white;
+  margin: 2%;
+  border-radius: 8px;
+  margin-left: 0;
+    .card-rat-img-profile-index {
+      width: 60%;
+      background-position: center;
+      background-size: cover;
+      border-radius: 8px 0 0 8px;
+    }
+}
+
+@media (max-width: 1700px) {
+  .container-rat-profile-index {
+    margin-left: 2%;
+  }
 }

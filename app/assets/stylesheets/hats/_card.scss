@@ -30,9 +30,6 @@
   display: grid;
   flex-grow: 1;
   text-align: center;
-
-  margin-top: 3%;
-  margin-bottom: 3%;
 }
 
 .hats {
@@ -42,14 +39,14 @@
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 100px) and (max-width: 768px) {
+@media (min-width: 100px) and (max-width: 999px) {
   .hats {
     grid-template-columns: 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 767px) and (max-width: 992px) {
+@media (min-width: 1000px) and (max-width: 1700px) {
   .hats {
     grid-template-columns: 1fr 1fr;
   }
@@ -58,10 +55,9 @@
 .card-hat {
   // height: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 93%;
   padding: 0%;
   text-align: left;
-  border-radius: 5%;
+  border-radius: 8px;
     h2 {
       font-size: 150%;
       margin-bottom: 0%;
@@ -73,11 +69,11 @@
   aspect-ratio: 16 / 12;
   // border-radius: 8px;
   background-size: cover;
-  border-radius: 5% 5% 0% 0%;
+  border-radius: 8px 8px 0% 0%;
 }
 
 .card-hat-text {
-  padding: 3%;
+  padding: 25px;
     a {
       font-weight: lighter;
       color: black;
@@ -92,6 +88,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  p {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
 }
 
 .container-hat {
@@ -99,12 +99,26 @@
   flex-grow: 1;
   background-color: #fafafa;
   box-shadow: 2px 2px 3px rgba(0,0,0,0.2);;
-  border-radius: 5%;
+  border-radius: 8px;
   text-align: center;
-  width: 40%;
+  width: 25%;
   margin: 0 auto;
-  margin-top: 4%;
-  margin-bottom: 4%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 768px) {
+  .container-hat {
+    width: 100%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 1700px) {
+  .container-hat {
+    width: 50%;
+  }
 }
 
 .container-hat-card {
@@ -122,9 +136,32 @@
   height: 100%;
   padding: 0%;
   text-align: left;
-  border-radius: 5%;
+  border-radius: 8px;
     h2 {
       font-size: 150%;
       margin-bottom: 0%;
     }
+}
+
+.container-hats-shop {
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 3%;
+  background-color: white;
+  padding: 3%;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 999px) {
+  .container-hats-shop {
+    width: 90%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 1000px) and (max-width: 1700px) {
+  .container-hats-shop {
+    width: 80%;
+  }
 }

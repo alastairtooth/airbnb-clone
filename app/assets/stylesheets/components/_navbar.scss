@@ -27,3 +27,15 @@
 #home-navbar {
   position: fixed;
 }
+
+.nav-link.active {
+    background-color: #545b62!important;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  color: #FFD621;
+}
