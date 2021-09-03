@@ -16,10 +16,8 @@ class RatsController < ApplicationController
   end
 
   def show
-    unless params[:id] == "map"
-      @rat = Rat.find(params[:id])
-      @hats = @rat.hats
-    end
+    @rat = Rat.find(params[:id])
+    @hats = @rat.hats
   end
 
   def new
