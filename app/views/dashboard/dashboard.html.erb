@@ -1,9 +1,6 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="request-tab" data-toggle="tab" href="#request" role="tab" aria-controls="request" aria-selected="true">Booking Requests</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="bookings-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="bookings" aria-selected="false">My Bookings</a>
+    <a class="nav-link active" id="request-tab" data-toggle="tab" href="#request" role="tab" aria-controls="request" aria-selected="true">My Booking</a>
   </li>
   <li class="nav-item" role="presentation">
     <a class="nav-link" id="items-tab" data-toggle="tab" href="#items" role="tab" aria-controls="items" aria-selected="false">My Items</a>
@@ -12,104 +9,110 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="request" role="tabpanel" aria-labelledby="request-tab">
     <div class="container-bookings-pending">
-      <h2>Pending bookings</h2>
-      <div class="bookings-pending">
-        <% @pending_bookings.each do |booking| %>
-          <% if booking.hat.rat == current_rat %>
-            <div class="card-bookings-pending">
-              <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
-              <div class="card-bookings-pending-text">
-                <h2><strong><%= booking.hat.title %></strong></h2>
-                <div class="price-size">
-                  <p>$<%= booking.hat.price %></p>
-                  <p>Size: <%= booking.hat.size %></p>
-                  <p>Status: <%= booking.status %></p>
-                </div>
-                <% if booking.status == 'pending' %>
-                  <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-primary" %>
-                  <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-primary" %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+      <div class="pending-title-container">
+        <h2>All my <strong>bookings</strong> !</h2>
       </div>
-    </div>
-    <div class="container-bookings-pending">
-      <h2>Rent history</h2>
       <div class="bookings-pending">
-        <% @historical_bookings.each do |booking| %>
-          <% if booking.hat.rat == current_rat %>
+        <% @sent_bookings.each do |booking| %>
+          <div class="card-pending-container">
             <div class="card-bookings-pending">
-              <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
-              <div class="card-bookings-pending-text">
-                <h2><strong><%= booking.hat.title %></strong></h2>
-                <div class="price-size">
-                  <p>$<%= booking.hat.price %></p>
-                  <p>Size: <%= booking.hat.size %></p>
-                  <p>Status: <%= booking.status %></p>
-                </div>
-                <% if booking.status == 'pending' %>
-                  <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-primary" %>
-                  <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-primary" %>
-                <% end %>
-              </div>
-            </div>
-           <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
-    <div class="container-bookings-pending">
-      <h2>All my <strong>bookings</strong> !</h2>
-      <div class="container-hats">
-        <div class="hats">
-          <% @sent_bookings.each do |booking| %>
-            <div class="card-hat">
               <div class="card-hat-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
               <div class="card-hat-text">
                 <h2><strong><%= booking.hat.title %></strong></h2>
-                <div class="price-size">
-                  <p>$<%= booking.hat.price %></p>
-                  <p>Size: <%= booking.hat.size %></p>
-                  <p>Status: <%= booking.status %></p>
-                </div>
+                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
+                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
               </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="container-bookings-pending">
+      <div class="pending-title-container">
+        <h2>Pending bookings</h2>
+      </div>
+      <div class="bookings-pending">
+        <% @pending_bookings.each do |booking| %>
+          <div class="card-pending-container">
+            <div class="card-bookings-pending">
+              <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
+              <div class="card-hat-text">
+                <h2><strong><%= booking.hat.title %></strong></h2>
+                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
+                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
+                <% if booking.status == 'pending' %>
+                  <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-success" %>
+                  <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-danger" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% if @pending_bookings.empty? %>
+          <p> No pending booking </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="container-bookings-pending">
+      <div class="pending-title-container">
+        <h2>Rent history</h2>
+      </div>
+      <div class="bookings-pending">
+        <% @historical_bookings.each do |booking| %>
+          <div class="card-pending-container">
+            <div class="card-bookings-pending">
+              <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path booking.hat.photo.key, height: 300, crop: :fill %>')"></div>
+              <div class="card-hat-text">
+                <h2><strong><%= booking.hat.title %></strong></h2>
+                <p><i class="fas fa-question-circle"></i> Status: <%= booking.status %></p>
+                <p><i class="fas fa-calendar"></i> From: <%= booking.start_date %></p>
+                <p><i class="fas fa-calendar-times"></i> To: <%= booking.end_date %></p>
+                <% if booking.status == 'pending' %>
+                  <%= link_to 'Accept', booking_path(booking, booking: {status: 'accepted'}), method: :patch, class: "btn btn-primary" %>
+                  <%= link_to 'Decline', booking_path(booking, booking: {status: 'declined'}), method: :patch, class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
   <div class="tab-pane fade" id="items" role="tabpanel" aria-labelledby="items-tab">
     <div class="container-bookings-pending">
-      <h2>All my hats for <strong>rats</strong> !</h2>
-      <p><%= link_to 'Add a new hat', new_hat_path(@hat) %></p>
-      <div class="container-hats">
-        <div class="hats">
+      <div class="pending-title-container">
+        <h2>All my hats for <strong>rats</strong> !</h2>
+        <p><%= link_to 'Add a new hat', new_hat_path(@hat) %></p>
+      </div>
+      <div class="bookings-pending">
           <% @hats.each do |hat| %>
-            <div class="card-hat-item">
-              <div class="card-hat-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
-              <div class="card-hat-text">
-                <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
-                <div class="price-size">
-                  <p>$<%= hat.price %></p>
-                  <p>Size: <%= hat.size %></p>
-                </div>
-                <div class="edit-delete">
-                <%= link_to 'Edit', edit_hat_path(hat), class: "btn btn-success"  %>
+            <div class="card-pending-container">
+              <div class="card-bookings-pending">
+                <%= link_to hat_path(hat) do %>
+                  <div class="card-bookings-pending-img" style="background-image: url('<%= cl_image_path hat.photo.key, height: 300, crop: :fill %>')"></div>
+                <% end %>
+                <div class="card-hat-text">
+                  <h2><strong><%= link_to hat.title, hat_path(hat) %></strong></h2>
+                  <div class="price-size">
+                    <p><i class="fas fa-money-bill-alt"></i> $<%= hat.price %>    </p>
+                    <p><i class="fas fa-hat-cowboy-side"></i> Size: <%= hat.size %></p>
+                    <p><i class="fas fa-question-circle"></i> Available: <%= hat.available %></p>
+                  </div>
+                  <br>
+                  <div class="edit-delete">
+                    <%= link_to 'Edit', edit_hat_path(hat), class: "btn btn-success"  %>
 
-                <%= link_to "Delete",
-                    hat_path(hat),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
+                    <%= link_to "Delete",
+                        hat_path(hat),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+                  </div>
                 </div>
-
               </div>
             </div>
           <% end %>
-        </div>
       </div>
     </div>
   </div>

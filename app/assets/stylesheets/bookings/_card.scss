@@ -1,45 +1,69 @@
 .container-bookings-pending {
-  display: grid;
-  flex-grow: 1;
   text-align: left;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 3%;
   margin-bottom: 3%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  background-color: white;
+  border: 1px solid #abaaaa;
+}
+
+.pending-title-container {
+  padding: 0% 3%;
 }
 
 .bookings-pending {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding-left: calc(3% - 10px);
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 100px) and (max-width: 768px) {
+@media (min-width: 100px) and (max-width: 767px) {
   .bookings-pending {
-    grid-template-columns: 1fr;
+    width: 100%;
   }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 767px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 1700px) {
   .bookings-pending {
-    grid-template-columns: 1fr 1fr;
+    width: calc(100% / 1);
   }
 }
 
 
+.card-pending-container {
+  padding: 10px;
+  flex-shrink: 0;
+  width: calc(100% / 5); // same as 20%
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 767px) {
+  .card-pending-container {
+    width: 100%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 1700px) {
+  .card-pending-container {
+    width: calc(100% / 3);
+  }
+}
+
 .card-bookings-pending {
   // height: 100%;
+  width: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 93%;
-  padding: 0%;
-  text-align: left;
-  border-radius: 5%;
-    h2 {
-      font-size: 150%;
-      margin-bottom: 0%;
-    }
+  border-radius: 8px;
+  h2 {
+    font-size: 150%;
+    margin-bottom: 10px;
+  }
 }
 
 .card-bookings-pending-img {
@@ -47,7 +71,7 @@
   aspect-ratio: 16 / 12;
   // border-radius: 8px;
   background-size: cover;
-  border-radius: 5% 5% 0% 0%;
+  border-radius: 8px 8px 0% 0%;
 }
 
 .card-bookings-pending-text {
