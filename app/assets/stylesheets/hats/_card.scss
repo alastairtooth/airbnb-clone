@@ -39,14 +39,14 @@
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 100px) and (max-width: 768px) {
+@media (min-width: 100px) and (max-width: 999px) {
   .hats {
     grid-template-columns: 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 767px) and (max-width: 992px) {
+@media (min-width: 1000px) and (max-width: 1700px) {
   .hats {
     grid-template-columns: 1fr 1fr;
   }
@@ -150,4 +150,18 @@
   margin-bottom: 3%;
   background-color: white;
   padding: 3%;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 999px) {
+  .container-hats-shop {
+    width: 90%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 1000px) and (max-width: 1700px) {
+  .container-hats-shop {
+    width: 80%;
+  }
 }

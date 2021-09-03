@@ -97,6 +97,19 @@
     }
 }
 
+@media (min-width: 100px) and (max-width: 768px) {
+  .container-rat-profile {
+    width: 95%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 767px) and (max-width: 1700px) {
+  .container-rat-profile {
+    font-size: 80%;
+  }
+}
+
 .card-rat-img-profile {
   aspect-ratio: 16 / 12;
   // border-radius: 8px;
