@@ -17,7 +17,8 @@ puts "Creating files"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: "rat#{Faker::Internet.free_email}",
-    password: "password"
+    password: "password",
+    address: Faker::Address.city
   )
   file = URI.open('https://source.unsplash.com/200x200/?rats')
   rat.photo.attach(io: file, filename: "desktop.png", content_type: "image/png")
